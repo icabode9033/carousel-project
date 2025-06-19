@@ -1,0 +1,418 @@
+/* ==========================================================================
+   1. ESTILOS BASE (MOBILE-FIRST) - Padrão para todas as telas
+   ========================================================================== */
+body {
+   
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.home-content-box {
+    align-items: center;
+    position: relative;
+    min-width: none; /* Mantém o limite máximo para telas muito grandes */
+    min-height: 80vh; /* Altura flexível baseada na viewport */
+    width: 95vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 16px; /* Padding ajustado para mobile */
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.home-content-box:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transform: scale(1.01);
+  transition: all 0.5s ease-in-out;
+}
+
+.header-background {
+    display: flex;
+    justify-content: center;
+
+}
+
+.custom-header {
+    color: white;
+    background-color: rgba(226, 226, 226, 0.726);
+    border-radius: 40px;
+    padding: 14px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os links quebrem a linha em telas menores */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bar-link {
+  color: #000;
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  min-width: 250px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.bar-link a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.bar-link:hover {
+  background-color: aquamarine;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.dot {
+    display: none; /* Pontos separadores não são tão úteis em mobile, economiza espaço */
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.dot:hover {
+  background-color: aquamarine;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.15);
+  transition: all 0.3s ease;
+}
+
+.bar-link-home {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%; /* Deixa o botão home redondo */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+
+.bar-link-home:hover{
+ background-color: aquamarine;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.15);
+  transition: all 0.3s ease;
+}
+
+
+
+.bar-link-about{
+   background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%; /* Deixa o botão home redondo */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transition: all 0.3s ease;
+
+
+
+}
+
+
+.bar-link-about:hover{
+   background-color: aquamarine;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.15);
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. ESTILOS DO CARROSSEL (MOBILE-FIRST)
+   ========================================================================== */
+.carousel-container {
+    position: relative;
+    width: 90%;
+    height: 450px; /* Altura reduzida para mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+    
+}
+
+.carousel-container:active {
+    cursor: grabbing; /* Muda o cursor durante o clique */
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    /* Necessário para o efeito 3D do carrossel */
+}
+
+
+
+.item {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+    position: absolute;
+    border: 2px solid #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto; /* Centraliza o item na horizontal */
+    width: 240px; /* Largura reduzida para caber em telas pequenas */
+    height: 400px; /* Altura reduzida */
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    opacity: 0;
+    transform: scale(0.7);
+
+    
+
+  
+  user-select: none; /* Impede a seleção de texto durante o arrasto */
+
+
+    
+}
+
+/* Posições e visibilidade dos itens gerenciadas por JS e classes */
+.center {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 5;
+   
+}
+
+.left-1, .right-1 {
+    opacity: 0.6;
+    transform: translateX(-90px) scale(0.85); /* Usa translateX para posicionar */
+    z-index: 4;
+
+}
+
+.right-1 {
+    transform: translateX(90px) scale(0.85);
+}
+
+.left-2, .right-2 {
+    opacity: 0.3;
+    transform: translateX(-150px) scale(0.7);
+    z-index: 3;
+}
+
+.right-2 {
+    transform: translateX(150px) scale(0.7);
+}
+
+.hidden {
+   overflow: visible; 
+   
+}
+
+/* Conteúdo dos Cards */
+.card-logo-header {
+    display: block;
+    max-width: 120px; /* Tamanho ajustado */
+    margin: 15px auto 10px;
+    object-fit: contain;
+}
+
+.med-info-container {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.med-nome-topo {
+    font-size: 24px; /* Tamanho da fonte ajustado */
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.med-descricao {
+    font-size: 16px; /* Tamanho da fonte ajustado */
+    color: white;
+    margin-top: 10px;
+}
+
+.tarja { /* Estilo unificado para tarjas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.tarja-amarela {
+ 
+    background-color: #ffeb3b;
+    color: black;
+    font-size: 20px;
+}
+
+.tarja-vermelha {
+    min-height: 80px;
+    background-image: linear-gradient(#b71c1c, #c94a4a);
+    color: white;
+    flex-direction: column;
+}
+
+.tarja-vermelha p {
+    margin: 2px 0;
+    font-size: 12px;
+    color: white;
+}
+.tarja-vermelha p strong {
+    color: white !important;
+}
+
+.card-logo {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
+
+
+
+
+/* Cores de fundo dos cartões (sem alteração) */
+.paracetamol { background: linear-gradient(135deg, #044dad, #008cff); }
+.dipirona { background: linear-gradient(135deg, #ce0000, #ff5f5f); }
+.ibuprofeno { background: linear-gradient(135deg, #4b0675, #ac6bd4); }
+.amoxicilina { background: linear-gradient(135deg, #00695c, #26a69a); }
+.metformina { background: linear-gradient(135deg, #5d106d, #ff00ea); }
+.omeprazol { background: linear-gradient(135deg, #ffb74d, #ff0000); }
+
+/* ==========================================================================
+   3. MEDIA QUERIES - Ajustes para telas maiores
+   ========================================================================== */
+
+/* -- TABLETS (a partir de 768px) -- */
+@media (min-width: 767px) {
+    body {
+        padding: 32px; /* Aumenta o espaçamento */
+    }
+    
+    
+    .home-content-box {
+        max-width: 1200px;
+        padding: 32px;
+    }
+
+    .custom-header {
+      width: 1000vh;
+        flex-wrap: nowrap; /* Impede a quebra de linha dos links */
+        padding: 14px 30px;
+    }
+    .bar-link {
+        min-width: 150px; /* Ajusta o tamanho mínimo dos links */
+        padding: 10px 20px; /* Aumenta o padding */
+    }
+
+    .dot {
+        display: block; /* Mostra os pontos separadores novamente */
+        width: 8px;
+        height: 8px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        
+    }
+    .dot:hover {
+        background-color: aquamarine;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.15);
+    }
+
+
+
+    .carousel-container {
+        height: 550px;
+    }
+
+    .item {
+        width: 320px;
+        height: 550px;
+    }
+
+    /* Posições do carrossel para telas maiores */
+    .left-1 { transform: translateX(-200px) scale(0.85); }
+    .right-1 { transform: translateX(200px) scale(0.85); }
+    .left-2 { transform: translateX(-350px) scale(0.7); }
+    .right-2 { transform: translateX(350px) scale(0.7); }
+
+    .carousel-button {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    .carousel-button.prev { left: 20px; }
+    .carousel-button.next { right: 20px; }
+}
+
+/* -- DESKTOPS (a partir de 1200px) -- */
+@media (min-width: 1200px) {
+    .carousel-container {
+        max-width: 1400px;
+        overflow: visible; /* Permite ver os cards laterais */
+    }
+
+    /* Restaura as posições originais baseadas em 'left' para desktops grandes */
+    .item {
+        
+    }
+
+    .left-1 { transform: translateX(-250px) scale(0.85); }
+    .right-1 { transform: translateX(250px) scale(0.85); }
+    .left-2 { transform: translateX(-450px) scale(0.7); }
+    .right-2 { transform: translateX(450px) scale(0.7); }
+
+
+
+
+    .carousel-button.prev { left: -50px; }
+    .carousel-button.next { right: -50px; }
+}

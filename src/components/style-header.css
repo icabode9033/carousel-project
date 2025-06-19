@@ -1,0 +1,26 @@
+.nav-with-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-with-dots li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot-item {
+  pointer-events: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.7;
+}

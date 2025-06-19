@@ -1,0 +1,50 @@
+.navbar {
+  padding: 0;
+  background-color: #c3e93c; /* igual ao botão 'sobre' */
+  border-radius: 8px;
+  backdrop-filter: none; /* remover blur para cor sólida */
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #000000; /* texto preto */
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar .active {
+  background-color: #bde033; /* cor ligeiramente mais escura no hover */
+  border-radius: 6px;
+}
+
+.navbar .getstarted {
+  background: #bde033;
+  color: #000 !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar .getstarted:hover {
+  background: #a9cc2e;
+  color: #000 !important;
+}

@@ -1,0 +1,138 @@
+.formulario-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px; /* Aumentei um pouco o gap entre os cards */
+    padding: 30px; /* Ajustei o padding */
+    background-color: rgba(230, 245, 243, 0.7); /* Fundo um pouco mais claro e neutro, ou mantenha o seu se preferir */
+    /* backdrop-filter: blur(5px); /* Opcional: Efeito de vidro, teste a compatibilidade */
+    border-radius: 20px; /* Raio de borda consistente */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    
+    height: 620px; 
+    width: 100%; 
+    max-width: 1300px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-family: 'Segoe UI', Roboto, sans-serif; /* Adicionado Roboto como fallback */
+    overflow-y: auto; 
+    box-sizing: border-box; 
+}
+
+.titulo {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 28px; /* Um pouco menor para um visual mais leve */
+    font-weight: 600; /* Ajustado para semibold */
+    margin-bottom: 20px; /* Aumentei a margem inferior */
+    color: #1a535c; /* Cor mais escura e sóbria, ex: um azul petróleo escuro ou verde escuro */
+}
+
+.pergunta {
+    background: #ffffff;
+    padding: 22px 26px; /* Padding ajustado */
+    border-radius: 14px; /* Raio de borda um pouco menor e moderno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* Sombra mais suave e elevada */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    /* border: 6px solid #2b6355; /* REMOVIDA BORDA GROSSA */
+    border: 1px solid #e9ecef; /* Borda fina e clara, quase invisível */
+    box-sizing: border-box;
+}
+
+.pergunta:hover {
+    transform: translateY(-4px); /* Efeito de elevação mais pronunciado */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pergunta label {
+    font-weight: 500; /* Peso médio */
+    color: #343a40; /* Cor de texto escura, mas não preto puro */
+    font-size: 15px; /* Tamanho ligeiramente ajustado */
+    margin-bottom: 10px; /* Mais espaço abaixo do label */
+}
+
+.pergunta input {
+    padding: 14px 16px; /* Padding interno do input */
+    border-radius: 8px; /* Bordas mais suaves */
+    border: 1px solid #ced4da; /* Borda padrão mais clara */
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%; 
+    box-sizing: border-box;
+    background-color: #f8f9fa; /* Fundo do input sutilmente diferente */
+}
+
+.pergunta input::placeholder { /* Estilizando o placeholder */
+    color: #868e96;
+    opacity: 1;
+}
+
+.pergunta input:focus {
+  color: rgb(255, 255, 255); /* mantém o texto visível */
+
+
+}
+
+.btn-enviar {
+    grid-column: 1 / -1;
+    margin-top: 25px; /* Mais espaço acima do botão */
+    padding: 15px 30px; /* Padding ajustado */
+    background-color: #00bfa6; /* Sua cor base */
+    color: #ffffff; /* Texto branco para melhor contraste */
+    border: none; /* SEM BORDA */
+    border-radius: 10px; /* Consistente com inputs */
+    font-weight: 600; /* Semibold */
+    cursor: pointer;
+    font-size: 16px;
+    justify-self: center; 
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    /* border: 6px solid #2b6355; /* REMOVIDA BORDA GROSSA */
+    box-shadow: 0 4px 12px rgba(0, 191, 166, 0.25); /* Sombra sutil baseada na cor do botão */
+}
+
+.btn-enviar:hover {
+    background-color: #00a795; /* Tom um pouco mais escuro no hover */
+    transform: translateY(-2px) scale(1.02); /* Efeito de hover mais sutil */
+    box-shadow: 0 6px 16px rgba(0, 191, 166, 0.35);
+}
+
+/* Estilização da Scrollbar (mantida da sua última configuração) */
+.unit-list-vertical,
+.formulario-container {
+    scrollbar-width: thin;
+    scrollbar-color: #009f8a rgba(0, 0, 0, 0.08);
+}
+
+.unit-list-vertical::-webkit-scrollbar,
+.formulario-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.unit-list-vertical::-webkit-scrollbar-track,
+.formulario-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.unit-list-vertical::-webkit-scrollbar-thumb,
+.formulario-container::-webkit-scrollbar-thumb {
+    background-color: #009f8a;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.unit-list-vertical::-webkit-scrollbar-thumb:hover,
+.formulario-container::-webkit-scrollbar-thumb:hover {
+    background-color: #00bfa6;
+}
+
+.unit-list-vertical::-webkit-scrollbar-button,
+.formulario-container::-webkit-scrollbar-button {
+    display: none;
+}
